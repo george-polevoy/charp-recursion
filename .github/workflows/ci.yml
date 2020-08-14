@@ -26,3 +26,10 @@ jobs:
 
       - name: Bench
         run: dotnet run -c Release -p src/recursion.Bench/recursion.Bench.csproj
+
+      - name: Archive BenchmarkDotNet artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: benchmarkdotnet-artifacts
+          path: |
+            BenchmarkDotNet.Artifacts
