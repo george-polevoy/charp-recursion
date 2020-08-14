@@ -22,7 +22,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Test app
-          run: dotnet test --configuration Release --no-build
-        
+        run: dotnet test --configuration Release --no-build
+
       - name: Bench
         run: dotnet run -c Release -p src/recursion.Bench/recursion.Bench.csproj
