@@ -4,7 +4,7 @@ using BenchmarkDotNet.Jobs;
 namespace recursion.Bench
 {
     [SimpleJob(RuntimeMoniker.NetCoreApp31)]
-    [IterationTime(100)]
+    [IterationTime(110)]
     [AsciiDocExporter]
     [CsvExporter]
     [CsvMeasurementsExporter]
@@ -16,12 +16,12 @@ namespace recursion.Bench
         public int N;
 
         [Benchmark]
-        public int Iterative() => Fibo.Iterative(N);
+        public int Iterative() => Methods.Iterative(N);
 
         [Benchmark(Baseline = true)]
-        public int Recursive() => Fibo.Recursive(N);
+        public int Recursive() => Methods.Recursive(N);
 
         [Benchmark]
-        public int TailRecursive() => Fibo.TailRecursive(N);
+        public int TailRecursive() => Methods.TailRecursive(N);
     }
 }
